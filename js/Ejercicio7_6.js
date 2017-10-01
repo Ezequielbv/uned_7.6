@@ -1,12 +1,4 @@
-//Ejercicio 5-4 
-
-
-// La variable contador es el índice con el que se accederá a los arrays con las imágenes
-// y los textos a mostrar
-var contador=0;
-
-
-// Array con la localización de los ficheros de las imágenes
+//Ejercicio 7-6 
 var img = new Array(
 	"img/fotoCiencias.jpg",
 	"img/fotoDerecho.jpg",
@@ -19,9 +11,6 @@ var img = new Array(
 	"img/fotoInformatica.jpg",
 	"img/fotoPsicologia.jpg"
 );
-
-
-// Array con los textos a mostrar
 var tittle = new Array(
 	"Facultad de Ciencias",
 	"Facultad de Derecho",
@@ -35,28 +24,17 @@ var tittle = new Array(
 	"Facultad de Psicologia"
 );
 
+function cambiarFoto(){
+	var texto = document.getElementById("titulos");
+	var foto = document.getElementById("facultades");
 
-function change(){
+	var randomArray = Math.floor(Math.random() * fotos.length);
 
-	document.getElementById("facultades").src = img[contador];
-	document.getElementById("titulos").innerHTML = tittle[contador];
-	
-	// Actualizar contador. Los array tienen una longitud de 10, pero el contador
-	// tiene que ir desde 0 hasta 9, por eso se pone el -1
-	if(contador== img.length-1)
-		contador=0;
-	else	
-		contador++;
-	
+	texto.innerHTML = textos[randomArray];
+	foto.src = fotos[randomArray];
 }
 
-
-onload = function(){
-	
-	// LLamar por primera vez a la función change() para que coloque los primeros valores
-	change();
-	
-	// Llamar a la función change() cada 2000 milisegundos = 2 segundos
-	setInterval(change,2000);
-	
+onload = function() {
+	cambiarFoto();
+	setInterval(cambiarFoto,2000);
 }
