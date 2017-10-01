@@ -25,13 +25,13 @@ var tittle = new Array(
 );
 
 function cambiarFoto(){
-	var texto = document.getElementById("titulos");
+	var txt = document.getElementById("titulos");
 	var foto = document.getElementById("facultades");
 
-	var randomArray = Math.floor(Math.random() * fotos.length);
+	var randomArray = Math.floor(Math.random() * img.length);
 
-	texto.innerHTML = textos[randomArray];
-	foto.src = fotos[randomArray];
+	txt.innerHTML = tittle[randomArray];
+	foto.src = img[randomArray];
 }
 
 onload = function() {
